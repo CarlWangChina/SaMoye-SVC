@@ -25,7 +25,7 @@ tensorboard --logdir=logs/sovits_spk_1700h --port 12345
 ```
 
 ## Infer script:
-Download the ckpt from [this link](https://drive.google.com/file/d/1GnPmTS2Ps3rGVEcQX8a1GuVd48nN3f43/view?usp=drive_link).
+Download the ckpt from [this link](https://pan.baidu.com/s/1AxnLlmCSPaMAkEBwUyaI2g?pwd=9999).
 
 ```bash
 python svc_inference.py --config configs/sovits_spk_1700h.yaml --model sovits_spk_1700h_0020.pt --spk spk.wav --wave content.wav
