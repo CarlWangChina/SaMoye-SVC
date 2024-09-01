@@ -6,6 +6,9 @@ In the root directory, we have included some audio samples as demos. These sampl
 
 ![image](pics/cover.jpg)
 
+In the zero-shot scenario of the SaMoye model, we've used 'cat' and 'dog' as reference audios, as well as 'man' and 'woman'. The results generated have all appeared on the homepage. Each audio file begins with the target timbre, followed by the generated portion. 
+
+Regarding problems encountered while running the model code, they are documented in the Q&A document available on our homepage. We've prepared two versions: one in Chinese and another in English. If you encounter any bugs in your code, please first consult these documents. If these sources do not resolve your issue, feel free to contact us.
 
 # Script
 This model's code is modified and improved based on [whisper-vits-svc](https://github.com/PlayVoice/whisper-vits-svc).
