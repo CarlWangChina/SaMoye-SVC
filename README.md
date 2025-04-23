@@ -2,7 +2,9 @@
 
 Even dogs can sing a song.
 
-The code is as shown in the repository, and the weight checkpoint can be downloaded from the following Baidu Netdisk link: https://pan.baidu.com/s/1AxnLlmCSPaMAkEBwUyaI2g?pwd=9999
+The code is as shown in the repository, and the weight checkpoint can be downloaded from the following:
+I have uploaded the model weights here on Hugging Face: https://huggingface.co/karl-wang/SaMoyeSVC/tree/main
+Baidu Netdisk link: https://pan.baidu.com/s/1AxnLlmCSPaMAkEBwUyaI2g?pwd=9999
 
 In the zero-shot scenario of the SaMoye model, we've used 'cat' and 'dog' as reference audios, as well as 'man' and 'woman'.
 The results generated have all appeared on the homepage.
