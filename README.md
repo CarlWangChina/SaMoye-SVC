@@ -129,7 +129,7 @@ The following files have been moved from this repository to Hugging Face:
 
 # Dataset and Configs Migration Notice
 
-为保证GitHub仓库的简洁和高效，以下目录因包含大量数据或配置文件，已被整体打包并上传至 Hugging Face Hub：
+To keep the GitHub repository lean and efficient, the following directories, which contain large amounts of data or numerous configuration files, have been archived and uploaded to Hugging Face Hub:
 
 - `experiments/configs`
 - `experiments/files`
@@ -137,8 +137,8 @@ The following files have been moved from this repository to Hugging Face:
 - `experiments/yongshengTestData`
 - `experiments/ExperimentResult_20240804_201310`
 
-请前往 Hugging Face 仓库 [https://huggingface.co/karl-wang/SaMoyeSVC/tree/main](https://huggingface.co/karl-wang/SaMoyeSVC/tree/main) 下载上述 zip 压缩包，并解压还原到本地对应目录。
+Please navigate to the Hugging Face repository at [https://huggingface.co/karl-wang/SaMoyeSVC/tree/main](https://huggingface.co/karl-wang/SaMoyeSVC/tree/main) to download the zip archives and restore them to their corresponding local directories.
 
-> **注意：**
-> 这些目录均为数据集或实验配置，未包含在 GitHub 代码仓库中。如需运行完整实验或复现结果，请务必下载并解压到原目录。
+> **Note:**
+> These directories contain datasets or experimental configurations and are not included in the GitHub code repository. If you wish to run the full experiments or reproduce the results, it is essential to download and extract them to their original paths.
 
