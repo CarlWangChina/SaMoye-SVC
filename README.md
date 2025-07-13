@@ -9,16 +9,7 @@ Baidu Netdisk link: https://pan.baidu.com/s/1AxnLlmCSPaMAkEBwUyaI2g?pwd=9999
 In the zero-shot scenario of the SaMoye model, we've used 'cat' and 'dog' as reference audios, as well as 'man' and 'woman'.
 The results generated have all appeared on the homepage.
 
-https://github.com/CarlWangChina/SaMoye-SVC/blob/main/unseen_man0_song2.wav
-
-https://github.com/CarlWangChina/SaMoye-SVC/blob/main/unseen_woman0_song4.wav
-
-https://github.com/CarlWangChina/SaMoye-SVC/blob/main/dog2_song2.wav
-
-https://github.com/CarlWangChina/SaMoye-SVC/blob/main/cat3_song0.wav
-
-https://github.com/CarlWangChina/SaMoye-SVC/blob/main/cat2_song4.wav
-
+https://github.com/CarlWangChina/SaMoye-SVC/PetVocolia-Demo
 Each audio file starts with the target timbre, followed by the generated portion. Please do not skip to the middle to listen to the audio; you will miss the beginning reference audio.
 
 In the root directory, we have included some audio samples as demos. These samples are outputs from the samoye-svc model, which uses the vocal timbres of cats and dogs to simulate singing. 

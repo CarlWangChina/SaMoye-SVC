@@ -1,0 +1,23 @@
+device: cuda:1
+so_vits_model_path:
+  model_path: mq_service/model/sovits5.0.pth
+
+mq: 
+  username: MjpyYWJiaXRtcS1zZXJ2ZXJsZXNzLWNuLWplbzNvZzNhMDBmOkxUQUk1dFFtZnVnOFJKUlV2aTdmUE5XZw==
+  password: RUY1NTQ2NUM3MDc0RUVBRERGOTEzQkI3RUNCNjZDOTYyODlGQkQ4NDoxNzExOTg1ODA3Mjk5
+  host: rabbitmq-serverless-cn-jeo3og3a00f.cn-zhangjiakou.amqp-2.net.mq.amqp.aliyuncs.com
+  port: 5672
+  virtual_host: PetCoCre
+  exchange: ""
+  queues: 
+
+    vsc_get_queue: create_music_tasksvc
+    svc_ack_queue: create_music_tasksvc_resp
+oss: 
+  # 配置 OSS 访问参数
+  END_POINT: https://oss-cn-zhangjiakou.aliyuncs.com  # OSS 外网节点
+  # 不能包含bucket名称：source
+  # https://PetCoCre-avatar.oss-cn-zhangjiakou.aliyuncs.com/source/data4oss/1116445/1116445_origin.mid
+  OSS_ACCESS_KEY_ID:
+  OSS_ACCESS_KEY_SECRET:
+  BUCKET_NAME: PetCoCre-source  # 你的 bucket 名称
