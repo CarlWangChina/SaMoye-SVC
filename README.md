@@ -84,7 +84,7 @@ Specific checkpoint directory:
 
 
 ### Migrated File List
-The following files have been moved from this repository to Hugging Face:  
+The following files have been moved from this repository to Hugging Face:  **[https://huggingface.co/karl-wang/SaMoyeSVC/tree/main](https://huggingface.co/karl-wang/SaMoyeSVC/tree/main)**
 - `3025_nanzhong_00057_005.ppg.npy`  
 - `best_model.pth.tar`  
 - `hubert-soft-0d54a1f4.pt`  
@@ -117,19 +117,33 @@ The following files have been moved from this repository to Hugging Face:
 - `trainRVQNOPPG_91k.pth`  
 - `trainTNohubertsoft_50.pth`
 
+# Large File and Dataset Migration Notice
 
-# Dataset and Configs Migration Notice
+To keep this GitHub repository lean and efficient, all large files, datasets, experimental configurations, and model weights have been migrated to Hugging Face Hub.
 
-To keep the GitHub repository lean and efficient, the following directories, which contain large amounts of data or numerous configuration files, have been archived and uploaded to Hugging Face Hub:
+All required assets can be downloaded from our official Hugging Face repository:
+**[https://huggingface.co/datasets/karl-wang/SaMoyeSVC/tree/main](https://huggingface.co/datasets/karl-wang/SaMoyeSVC/tree/main)**
 
-- `experiments/configs`
-- `experiments/files`
-- `experiments/train_shpanxin`
-- `experiments/yongshengTestData`
-- `experiments/ExperimentResult_20240804_201310`
+### Migrated Content Overview
 
-Please navigate to the Hugging Face repository at [https://huggingface.co/karl-wang/SaMoyeSVC/tree/main](https://huggingface.co/karl-wang/SaMoyeSVC/tree/main) to download the zip archives and restore them to their corresponding local directories.
+The migrated content includes the following:
 
-> **Note:**
-> These directories contain datasets or experimental configurations and are not included in the GitHub code repository. If you wish to run the full experiments or reproduce the results, it is essential to download and extract them to their original paths.
+1.  **Archived Experiment Directories:**
+    The following complete directories have been archived. Please download the corresponding `.zip` files and extract them to their original location.
+    - `experiments/configs`
+    - `experiments/files`
+    - `experiments/train_shpanxin`
+    - `experiments/yongshengTestData`
+    - `experiments/ExperimentResult_20240804_201310`
 
+2.  **Specific Archived Packages from `SaMoye-2`:**
+    These specific large packages have been archived. Please download and extract them to the original paths listed below.
+    - `raw_data.zip` (original path: `Singing-Data-Auto-Labeling-and-Diffsinger/raw_data`)
+    - `models.zip` (original path: `Whisper-SoVITS-Finetune_Contra-Branch-Contrastive-Learning_Rebuild-Branch-Refined/models`)
+    - `singer.zip` (original path: `Legacy-Diffsinger-Data-Preprocessing-Training-Code/singer`)
+
+3.  **All Other Large Files from `SaMoye-2`:**
+    Additionally, all individual files larger than **5 MB** from the `SaMoye-2` directory have been moved. This includes audio samples (`.wav`, `.mp3`, `.aac`), model weights (`.jit`, `.npy`), dictionaries (`.txt`), and other auxiliary data.
+
+> **Important:**
+> These files are essential for running experiments, training models, or reproducing results. They are not included in this GitHub repository, so please ensure you download and restore them to their correct original paths to ensure full functionality.
