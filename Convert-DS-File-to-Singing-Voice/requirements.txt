@@ -1,0 +1,6 @@
+pretty-midi
+librosa
+cn2an
+pypinyin
+einops
+onnxruntime-gpu

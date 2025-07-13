@@ -1,0 +1,157 @@
+base_config: configs/acoustic.yaml 
+ #当前配置基于并将覆盖的其他配置文件的路径,请不要修改
+
+#raw_data_dir: 
+  # - data/xxx1/raw 
+  # - data/xxx2/raw 
+#你的数据集存放的路径，包括wavs、transcriptions.csv等文件的存放路径，请务必修改
+#请注意！多说话人训练也需要改动此参数，将你所有的说话人的音频的存放路径依次修改
+#举例：
+raw_data_dir: 
+  - /export/data/svs_data/data_en/TIGER_DATA
+  - /export/data/svs_data/data_en/CSD
+
+# speakers: 
+#   - speaker1
+#   - speaker2
+#你说话人的ID，请务必修改
+#请注意！多说话人训练也需要改动此参数，将你所有的说话人的名称依次修改
+#举例：
+speakers: 
+  - TIGER
+  - CSD
+
+spk_ids: [] 
+#多说话人模型中说话人的 ID，请勿修改
+
+# test_prefixes: 
+#   - wav1 
+#   - wav2
+#   - wav3 
+#   - wav4
+#   - wav5
+#tensorboard 中val的测试音频，请务必手动随机挑选几条具有代表性的音频
+#举例：
+test_prefixes: 
+ - 'tiger_012_seg011'
+ - 'tiger_017_seg008'
+ - 'tiger_017_seg003'
+ - 'en001a_003'
+ - 'en001a_005'
+ #诸如 12_3 之类的音频名可能导致报错，可以加引号''以避免。举例：
+#  - '12_3'
+
+dictionary: dictionaries/tgm_sofa_dict.txt
+#单词-音素映射词典文件的路径。训练数据必须完全涵盖词典中的音素。有换词典需求可更改
+
+# binary_data_dir: data/xxx/binary 
+ #预处理文件路径，xxx为你的模型名，请务必修改 
+ #举例：
+binary_data_dir: data/Muer_en_2/binary_acoustic_bin
+
+binarization_args: 
+  num_workers: 8
+ #多进程参数 此项越大进程越多，预处理速度越快，越需要更多显存空间，请根据自身显卡显存酌情更改
+
+use_spk_id: true 
+#是否启用多说话人，若开启多说话人，请将false改为true
+
+num_spk: 2  
+#说话人数量，有几个不同的数据集就有几个说话人
+
+use_energy_embed: false 
+#是否使用energy 即响度，若启用，请将false改为true
+
+use_breathiness_embed: false 
+ #是否使用breathiness_embed 即气声，若启用，请将false改为true
+# 特别注意：只有准备训练唱法模型才可打开energy和breathiness。目前openutau已支持
+
+use_key_shift_embed: true  
+#是否使用key_shift_embed 即变调，若启用，请将false改为true
+
+use_speed_embed: true  
+#是否使用speed_embed 即变速，若启用，请将false改为true
+
+augmentation_args: 
+#以下为数据增强可选选项，数据增强可提⾼模型的性能或功能，但可能会增加训练数据的大小
+  random_pitch_shifting: 
+    enabled: true #是否启用，若启用，请将false改为true 需要开启（use_key_shift_embed）变调
+    range: [-5., 5.] #将随机移动的⾳⾼键的范围
+    scale: 1.0 #将应⽤扩充的数据量
+#随机变调，启⽤后，对数据进⾏随机变调，⽽不是在预处理时保留共振峰。此外，每条数据被变调的key将被嵌⼊到网络中。这将扩大音高范围，并允许在推理时控制帧级键移动（即VOCALOID 中的 GEN 参数，即性别参数）。
+  fixed_pitch_shifting: 
+    enabled: false #是否启用，若启用，请将false改为true 且需要开启（use_key_shift_embed）变调
+    targets: [-5., 5.] #变调的⽬标数量以及将向每个⽬标移动的键数
+    scale: 0.75 #每个增强⽬标将应⽤于的数据量
+#固定变调，启⽤后，数据的⾳⾼将固定变调。这些带有变调的数据将被标记为与原始数据不同的说话⼈，从⽽使模型成为组合模型。这也将扩⼤⾳⾼的范围（可能⽐随机⾳⾼转换略好）。这种增强与随机变调不兼容。（即VOCALOID 中的 GEN 参数，即性别参数）。
+  random_time_stretching: 
+    enabled: true #是否启用，若启用，请将false改为true 且需要开启（use_speed_embed）变速
+    range: [0.5, 2.] #变速⽐的范围
+    domain: log  # 或者linear参数，确定速度⽐将在哪个域中服从均匀分布，不推荐改动
+    scale: 1.0 #将应⽤扩充的数据量
+#随机倍速，启⽤后，预处理时数据的速度将随机更改。速度变化的⽐率将嵌⼊到⽹络中，这允许你在推理时控制framelevel speed或velocity。通过在训练时应⽤全局时间拉伸，您可以获得在推理时间应⽤本地时间拉伸的能⼒。可以⽤来调整辅⾳的纹理和元⾳不 同部分的⽐例。 应⽤此增强后，某些音频段会更长。请注意您的bs大小和 GPU 内存使⽤情况。（即VOCALOID 中的 VEL 参数，即发音速度，但⽐ VEL 参数灵活得多）
+# 注意：如果你的声学模型计划支持Gen参数以及VEL参数，请务必启用pitch_shifting参数以及 random_time_stretching，该俩种参数目前openutau已经支持
+
+residual_channels: 512
+residual_layers: 20
+#扩散解码器⽹络的宽度和深度，不推荐改动
+
+# shallow diffusion（浅扩散参数）
+use_shallow_diffusion: true #是否启用浅扩散，若启用，请将false改为true，OpenUtau已支持
+K_step: 400
+#浅扩散训练时最大深度，推荐数值为【200~300】
+K_step_infer: 400 #浅扩散推理时最大深度，请注意，K_step_infer数值需要小于等于K_step数值
+shallow_diffusion_args:
+  train_aux_decoder: true
+  train_diffusion: true
+  val_gt_start: false
+  aux_decoder_arch: convnext
+  aux_decoder_args:
+    num_channels: 512
+    num_layers: 6
+    kernel_size: 7
+    dropout_rate: 0.1
+  aux_decoder_grad: 0.1
+lambda_aux_mel_loss: 0.2
+#浅扩散参数，开启后可获得更快的合成体验
+
+
+optimizer_args: #优化器参数，如果你不懂以下参数是什么意思，则以下参数不建议修改
+  lr: 0.0004 #优化器初始学习率，如果你减小了bs大小，则可以考虑使用较小的学习率和更多的衰减步数。
+lr_scheduler_args: #学习率策略
+  scheduler_cls: torch.optim.lr_scheduler.StepLR
+  step_size: 50000 #衰减步数
+  gamma: 0.5 #衰减倍率 
+
+max_batch_frames: 80000 
+#每bs中最大frames 若跑到期望bs但显存仍有剩余可考虑增大此项
+
+max_batch_size: 160
+#36 bs，较⼤的bs在训练时消耗更多的 GPU 内存。此值可以根据你的 GPU 内存进⾏调整。如果报错CUDA out of memory则考虑适当调小。切记不要将此值设置得太低，因为小bs可能导致模型不收敛。
+
+max_updates: 320000 
+#最大更新step 即截至step，该数值表示模型训练到320000steps时会自动停止
+
+num_valid_plots: 10 
+#val数
+
+val_with_vocoder: true 
+#val过声码器，请勿修改
+
+val_check_interval: 2000 
+#每多少step保存一次模型
+
+num_ckpt_keep: 5
+ #ckpt留存数，该数值表示同时可保存5个ckpt模型，不影响永久ckpt模型保存
+
+permanent_ckpt_start: 200000 
+#永久ckpt 保存起始step
+
+permanent_ckpt_interval: 40000
+#永久检查点的间隔（训练步数）。永久检查点即使不是最新的，也不会被移除。该数值表示每40000步保存一份永久ckpt模型
+
+pl_trainer_devices: 'auto'
+ #选择设备,请勿修改
+
+pl_trainer_precision: '32-true' 
+#训练精度选择 ，推荐阅读自动混合精度文档

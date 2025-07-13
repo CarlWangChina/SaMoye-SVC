@@ -1,0 +1,12 @@
+name,minuts,path
+zihao_slice_30s,15,chkpt/zihao_slice_30s/sovits5.0_1200.pt
+henan_read_20s,15,chkpt/henan_read_20s/sovits5.0_0700.pt
+lizejing_read_20s,15,chkpt/lizejing_read_20s/sovits5.0_0900.pt
+lizejing_sing_20s,10,chkpt/lizejing_sing_20s/sovits5.0_0600.pt
+shanxi_sing_20s,15,chkpt/shanxi_sing_20s/sovits5.0_0900.pt
+sichuan_rap_10s,15,chkpt/sichuan_rap_10s/sovits5.0_0400.pt
+sichuan_read_10s,15,chkpt/sichuan_read_10s/sovits5.0_0400.pt
+zhangjian_read_20s,15,chkpt/zhangjian_read_20s/sovits5.0_0400.pt
+zhangjian_sing_20s,10,chkpt/zhangjian_sing_20s/sovits5.0_0300.pt
+zhangzunhua_read_20s,10,chkpt/zhangzunhua_read_20s/sovits5.0_0300.pt
+zhangzunhua_sing_20s,10,chkpt/zhangzunhua_sing_20s/sovits5.0_0300.pt

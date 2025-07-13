@@ -1,0 +1,34 @@
+# ETC
+.vscode
+__pycache__
+
+# Data dirs
+data/
+data_svc/
+dataset_raw/
+infer_test*
+_svc_out
+zihao_infer_test
+files/
+test_data/**
+
+# Models include pretrained models
+export/
+export_bak/
+chkpt/
+hubert_pretrain/
+vits_pretrain/
+whisper_pretrain/
+mq_service/model/sovits5.0.pth
+crepe/assets/
+speaker_pretrain/best_model.pth.tar
+rmvpe/pretrainModel
+pretrainModels/
+
+# Logs
+logs/
+
+train_sh
+train_shpanxin
+configs/
+configs/!base*.yaml

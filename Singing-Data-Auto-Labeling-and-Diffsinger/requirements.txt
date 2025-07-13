@@ -1,0 +1,16 @@
+# It is recommended to install torch and torchaudio manually.
+
+click
+einops==0.6.1
+h5py
+librosa<0.10.0
+lightning>=2.0.0
+matplotlib~=3.7.3
+numpy~=1.24.1
+PyYAML~=6.0.1
+tensorboard
+tensorboardX
+tqdm~=4.66.1
+textgrid
+chardet
+pandas~=2.0.3

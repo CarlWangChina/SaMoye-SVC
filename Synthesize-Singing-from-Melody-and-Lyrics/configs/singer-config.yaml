@@ -1,0 +1,9 @@
+# s3 server config
+download_config:
+  s3:
+    user: music_data
+    password: JR4#BjH675dS21vcOkju
+    host: 124.17.0.226
+    database: mysong
+    port: 3301
+  mv_path: /home/john/MuerSinger2/data

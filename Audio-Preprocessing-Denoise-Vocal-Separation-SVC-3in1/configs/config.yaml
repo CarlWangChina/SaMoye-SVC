@@ -1,0 +1,25 @@
+mq:
+  END_POINT : "https://oss-cn-zhangjiakou.aliyuncs.com"  # OSS 外网节点
+  ACCESS_KEY_ID : "LTAI5tKhVqkUUDmSYuQoBGiT"
+  ACCESS_KEY_SECRET : "9L3YRpWX9AH31MnzeVOY2QSSfIy2eD"
+  BUCKET_NAME : "caichong-source"  # 你的 bucket 名称
+
+  MQCP_HOST : 'rabbitmq-serverless-cn-jeo3og3a00f.cn-zhangjiakou.amqp-2.net.mq.amqp.aliyuncs.com'
+  MQCP_PORT : 5672
+  MQCP_VHOST : 'caichong'
+  MQCP_USER : 'MjpyYWJiaXRtcS1zZXJ2ZXJsZXNzLWNuLWplbzNvZzNhMDBmOkxUQUk1dFFtZnVnOFJKUlV2aTdmUE5XZw=='
+  MQCP_PASS : 'RUY1NTQ2NUM3MDc0RUVBRERGOTEzQkI3RUNCNjZDOTYyODlGQkQ4NDoxNzExOTg1ODA3Mjk5'
+  
+  # Queue Names to your service
+  SUBQ_NAME : 'create_music_03_soundtrack_process'
+  PUBQ_NAME : 'create_music_03_soundtrack_process_resp'
+
+oss:
+  host : "https://caichong-source.oss-cn-zhangjiakou.aliyuncs.com"
+
+processor:
+  device_list : [0,1,2,3]
+  use_denoise : True
+  uvr_path : '/home/pengfei/projects/audio_enhancement_mq/tmp/UVR5_Linux/models/VR_Models/9_HP2-UVR.pth'
+
+  model : "uvr" #uvr/demucs

@@ -1,0 +1,14 @@
+# Data dirs
+data/
+data_svc/
+dataset_raw/
+infer_test*
+_svc_out
+zihao_infer_test
+files/
+
+# Models include pretrained models
+export/
+chkpt/
+
+logs/
