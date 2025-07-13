@@ -1,0 +1,16 @@
+fsspec
+pyworld
+matplotlib
+soundfile
+scikit-learn
+scipy
+tensorboard
+transformers
+tqdm
+librosa
+omegaconf
+gradio==3.36.1
+ruamel.yaml
+resampy
+chardet
+faiss-cpu==1.7.4

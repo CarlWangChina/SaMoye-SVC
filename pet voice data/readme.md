@@ -1,0 +1,1 @@
+These pet sounds were recorded from the pet store. Only a portion of the data samples for which we have obtained authorization from the pet owners is provided here. You may use these as a test set. We have not yet received consent and permission from the pet owners to publicly release more data.

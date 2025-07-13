@@ -1,0 +1,26 @@
+FROM docker.m.daocloud.io/pytorch/pytorch:2.1.0-cuda12.1-cudnn8-devel
+
+LABEL maintainer="panxin"
+LABEL Remarls="sovits svc 5 gpu inference service"
+
+# Set env variables
+ENV HOME /home/panxin/sovits5
+ENV LC_ALL C.UTF-8
+ENV LANG C.UTF-8
+ENV ALGO_NAME "SOVITS5PANXIN"
+ENV TZ=Asia/Shanghai
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install dependencies
+RUN apt-get update || true
+RUN apt-get install -y curl wget tzdata && apt-get remove -y
+RUN wget -O /etc/apt/sources.list https://mirrors.cloud.tencent.com/repo/ubuntu20_sources.list && ln -fs /usr/share/zoneinfo/$TZ /etc/localtime
+RUN apt-get update || true
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential libsndfile1-dev git tar zip unzip vim htop python3-pip sox ffmpeg python3.9 libpython3.9-dev language-pack-zh-hans
+RUN locale-gen && rm /opt/conda/bin/python /opt/conda/bin/pip && cd /usr/bin && ln -s python3.9 python
+RUN python -m pip config set global.index-url https://mirrors.cloud.tencent.com/pypi/simple && python -m pip install --upgrade pip setuptools wheel
+
+COPY ./requirements.txt $HOME/requirements.txt
+RUN pip install -r $HOME/requirements.txt
+
+WORKDIR $HOME
