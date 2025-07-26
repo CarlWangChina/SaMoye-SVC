@@ -30,13 +30,13 @@ if __name__ == "__main__":
     parser.add_argument("--num_epochs", type=int, default=100)
     parser.add_argument("--learning_rate", type=float, default=0.001)
     parser.add_argument(
-        "--data_dir", type=str, default="/data/john/CaichongSinger/align_data/4w"
+        "--data_dir", type=str, default="/app/data/samoye-exp/align_data/4w"
     )
     parser.add_argument("--save_every", type=int, default=20)
     parser.add_argument(
         "--output_dir",
         type=str,
-        default=f"/home/john/CaichongSinger/checkpoint/lyrics_to_notes/{time_str}",
+        default=f"/app/data/samoye-exp/checkpoint/lyrics_to_notes/{time_str}",
     )
     args = parser.parse_args()
     train(args)

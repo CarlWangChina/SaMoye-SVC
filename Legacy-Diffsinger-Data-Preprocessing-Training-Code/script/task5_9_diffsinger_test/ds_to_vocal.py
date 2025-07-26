@@ -27,12 +27,12 @@ if __name__ == "__main__":
     import argparse
 
     """ python script/task5_9_diffsinger_test/ds_to_vocal.py \
-    --ds_output_path /home/john/CaichongSinger/singer/models/New_DiffSinger/samples \
-    --vocal_path /home/john/CaichongSinger/data/mq/human/test/vocal
+    --ds_output_path /app/data/samoye-exp/singer/models/New_DiffSinger/samples \
+    --vocal_path /app/data/samoye-exp/data/mq/human/test/vocal
 
     python script/task5_9_diffsinger_test/ds_to_vocal.py \
-    --ds_output_path /home/john/CaichongSinger/singer/models/Acoustc_Diffsinger/samples/00_我多想说再见啊.ds \
-    --vocal_path /home/john/CaichongSinger/data/mq/human/test/vocal
+    --ds_output_path /app/data/samoye-exp/singer/models/Acoustc_Diffsinger/samples/00_我多想说再见啊.ds \
+    --vocal_path /app/data/samoye-exp/data/mq/human/test/vocal
     """
     parser = argparse.ArgumentParser()
     parser.add_argument("--ds_output_path", type=str, required=True)

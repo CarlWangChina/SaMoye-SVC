@@ -74,8 +74,8 @@ def main(input_audio, output_audio, n_steps):
     print(f"Final output saved to {output_audio}")
 
 if __name__ == "__main__":
-    input_audio = "/home/pengfei/projects/audio_enhancement_mq/tests/data/原调.mp3"  # Path to input audio file
-    output_audio = "/home/pengfei/projects/audio_enhancement_mq/tests/data/变调.mp3"  # Path to save the final output audio file
+    input_audio = "/app/data/原调.mp3"  # Path to input audio file
+    output_audio = "/app/data/变调.mp3"  # Path to save the final output audio file
     n_steps = 4  # Number of semitones to shift
 
     main(input_audio, output_audio, n_steps)

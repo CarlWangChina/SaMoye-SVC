@@ -1,6 +1,3 @@
-# Copyright (c) 2024 MusicBeing Project. All Rights Reserved.
-#
-# Author: Feee <cgoxopx@outlook.com>
 import multiprocessing  
 import queue  
 import time  
@@ -119,3 +116,4 @@ class TaskManager:
     def add_task(self, task):  
         """添加任务到任务队列"""  
         self.task_queue.put(task)  
+

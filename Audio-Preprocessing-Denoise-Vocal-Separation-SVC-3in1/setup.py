@@ -1,7 +1,3 @@
-# Copyright (c) 2024 MusicBeing Project. All Rights Reserved.
-#
-# Author: Feee <cgoxopx@outlook.com>
-
 from setuptools import setup, find_packages  
   
 with open('requirements.txt') as f:  
@@ -13,3 +9,4 @@ setup(
     packages=find_packages(),  
     install_requires=requirements,   
 )
+

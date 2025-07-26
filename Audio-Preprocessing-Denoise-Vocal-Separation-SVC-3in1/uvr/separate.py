@@ -99,7 +99,7 @@ class  _audio_pre_():
 if __name__ == '__main__':
     device = 'cuda'
     is_half=True
-    model_path='/home/pengfei/projects/audio_enhancement_mq/tmp/UVR5_Linux/models/VR_Models/9_HP2-UVR.pth'
+    model_path='/app/data/models/VR_Models/9_HP2-UVR.pth'
     pre_fun = _audio_pre_(model_path=model_path,device=device,is_half=True)
     audio_path = 'audio.aac'
     save_path = 'opt'

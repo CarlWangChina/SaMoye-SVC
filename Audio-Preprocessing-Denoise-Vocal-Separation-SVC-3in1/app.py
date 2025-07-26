@@ -1,6 +1,3 @@
-# Copyright (c) 2024 MusicBeing Project. All Rights Reserved.
-#
-# Author: Feee <cgoxopx@outlook.com>
 from auenhan.service.infere_sub import start as app_start
 
 

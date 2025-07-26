@@ -17,9 +17,9 @@ from singer.ace_process.aces_to_aces_api import aces_file_to_ogg
 
 if __name__ == "__main__":
     aces_file_path = Path(
-        "/home/john/CaichongSinger/data/mq/human/temp/ace/98342e959a40497a936393e9a18c5e08/98342e959a40497a936393e9a18c5e08_sentence_2.aces"
+        "/app/data/temp/ace/98342e959a40497a936393e9a18c5e08/98342e959a40497a936393e9a18c5e08_sentence_2.aces"
     )
-    ogg_path = Path("/home/john/CaichongSinger/data/mq/human/temp/ogg/test_spk")
+    ogg_path = Path("/app/data/temp/ogg/test_spk")
 
     speaker_ids = [0, 1, 2, 4, 5, 7, 18, 24, 26, 29, 46, 49, 76, 80, 81, 82, 83, 84]
     for speaker_id in speaker_ids:

@@ -1,6 +1,3 @@
-# Copyright (c) 2024 MusicBeing Project. All Rights Reserved.
-#
-# Author: Feee <cgoxopx@outlook.com>
 import json
 
 import pika
@@ -20,3 +17,4 @@ def send_push(msg: dict, qname: str=PUBQ_NAME):
         ),)
     chan_op.close()
     connection.close()
+

@@ -1,7 +1,7 @@
 """
     需要将文件夹中的文件按照16个文件夹一起进行zip打包
     
-    1. 读取文件夹 /home/john/CaichongSinger/data/vocal/4-23
+    1. 读取文件夹 /app/data/4-23
     文件夹结构为：
     4-23
     ├── 0.1-0.1-0.1-0.1-1e-10-1000.0-8
@@ -37,7 +37,7 @@ import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')  
   
 # 文件夹路径  
-base_folder = Path('/home/john/CaichongSinger/data/vocal/4-23')  
+base_folder = Path('/app/data/4-23')  
   
 # 定义一个函数来生成xlsx文件，此处的score为占位数据，需要根据实际情况填写音频处理逻辑来生成真实的分数  
 def generate_xlsx(folder_path):  

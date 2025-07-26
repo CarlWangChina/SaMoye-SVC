@@ -1,6 +1,3 @@
-# Copyright (c) 2024 MusicBeing Project. All Rights Reserved.
-#
-# Author: Feee <cgoxopx@outlook.com>
 import multiprocessing
 import queue
 import os
@@ -37,11 +34,9 @@ def read_all_from_queue(q):
     results = []  
     while True:  
         try:  
-            # 尝试从队列中获取一个元素  
-            item = q.get_nowait()  # 在没有元素时抛出queue.Empty异常  
+            item = q.get_nowait()  
             results.append(item)  
         except queue.Empty:  
-            # 如果队列为空，则退出循环  
             break  
     return results
 
@@ -70,7 +65,6 @@ def upload_error(queue:multiprocessing.Queue):
 def upload_process_func(upload_queue, error_queue):
     logger.info("upload_process_func:start")
     while True:
-        # logger.info("loop")
         try:
             upload_tasks(upload_queue)
         except Exception as e:
@@ -105,21 +99,17 @@ def callback(
     send_push({"type":"ok","msg":result})
     
     logger.info(" [x]-%d Start merge data...", pid)
-    # This is just a simulation of time-consuming work
     
     process_audio(data)
 
 def subscribe():
-    # TODO read from config file
     cnx_rec_max_t = 4
     cnx_rec_times = 0
 
     while cnx_rec_times <= cnx_rec_max_t:
         try:
-            # don't forget to add param `--network="host"` when running docker container
             connection = get_mq_cnx()
 
-            # channel for input, sub for the task messages
             chan_ip = connection.channel()
 
             chan_ip.queue_declare(queue=SUBQ_NAME, durable=True)
@@ -131,20 +121,16 @@ def subscribe():
                 on_message_callback=callback)
 
             chan_ip.start_consuming()
-        # Don't recover if connection was closed by broker
         except pika.exceptions.ConnectionClosedByBroker:
             break
-        # Don't recover on channel errors
         except pika.exceptions.AMQPChannelError:
             break
-        # Recover on all other connection errors
         except pika.exceptions.AMQPConnectionError:
             cnx_rec_times += 1
             time.sleep(2)
             continue
 
 def start():
-    # print("start")
     logger.info("start")
     workers_num = 8
     mpp = multiprocessing.Pool(processes=workers_num)

@@ -21,7 +21,7 @@ from singer.ds_process.utils import get_spk
 
 app = FastAPI()
 # uvicorn server:app --reload --host 127.0.1.1 --port 8000 --workers 16
-# curl -X POST "http://127.0.1.1:8000/new_midi_to_vocal/" -d "new_midi_file_path='/home/john/pipeline_for_6w/MuerSinger2/data/midi_new/4-23-new-midi/_BALMY3_129191_revision_1.mid'&vocal_file_path='/home/john/CaichongSinger/data/vocal'"
+# curl -X POST "http://127.0.1.1:8000/new_midi_to_vocal/" -d "new_midi_file_path='/app/data/midi_new/4-23-new-midi/_BALMY3_129191_revision_1.mid'&vocal_file_path='/app/data/vocal'"
 
 
 @app.post("/new_midi_to_vocal/")
@@ -87,7 +87,7 @@ def fast_api_new_midi_to_vocal(
             var_ds_file_path,
             vocal_path,
             spk,
-            "/home/john/miniconda3/envs/diffsinger/bin/python",
+            "/app/bin/python",
         )
         return {"status": "success"}
     except Exception as e:
@@ -96,5 +96,6 @@ def fast_api_new_midi_to_vocal(
 
 
 if __name__ == "__main__":
-    # sudo /home/john/miniconda3/envs/diffsinger/bin/python script/fast_api/server.py
+    # sudo /app/bin/python script/fast_api/server.py
     uvicorn.run(app="server:app", host="127.0.1.1", port=8000, workers=32)
+

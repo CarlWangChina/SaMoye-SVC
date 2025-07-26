@@ -18,7 +18,7 @@ from singer.origin_process import new_midi_to_vocal
 from singer.ds_process.utils import get_spk
 
 
-# sudo /home/john/miniconda3/envs/diffsinger/bin/python script/fast_api/server.py
+
 def change_new_midi_to_vocal(
     new_midi_file_path: str,
     vocal_file_path: str,
@@ -76,7 +76,7 @@ def change_new_midi_to_vocal(
             var_ds_file_path,
             vocal_path,
             spk,
-            "/home/john/miniconda3/envs/diffsinger/bin/python",
+            "/app/venv/bin/python",
             cuda,
         )
         logger.info("Success")
@@ -86,8 +86,7 @@ def change_new_midi_to_vocal(
 
 if __name__ == "__main__":
     # 使用方法：
-    # sudo /home/john/miniconda3/envs/diffsinger/bin/python /home/john/CaichongSinger/script/fast_api/direct_access.py \
-    # --new_midi_file_path /path/to/new_midi_file --vocal_file_path /path/to/vocal_file --cuda 0
+
     import argparse
 
     parser = argparse.ArgumentParser()
@@ -96,3 +95,4 @@ if __name__ == "__main__":
     parser.add_argument("--cuda", type=int, default=0, help="cuda id, default 0")
     args = parser.parse_args()
     change_new_midi_to_vocal(args.new_midi_file_path, args.vocal_file_path, args.cuda)
+

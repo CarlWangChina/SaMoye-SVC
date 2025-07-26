@@ -1,7 +1,7 @@
 from get_song_from_aces import change_new_midi_to_ace_vocal
 from get_song_from_ds import change_new_midi_to_ds_vocal
 
-# sudo /home/john/miniconda3/envs/diffsinger/bin/python /home/john/CaichongSinger/script/get_song/get_song.py
+# sudo /app/miniconda3/envs/diffsinger/bin/python /app/samoye-exp/script/get_song/get_song.py
 # --new_midi_file_path xxxx --vocal_file_path xxxx --method ace --cuda 0
 if __name__ == "__main__":
     import argparse
@@ -21,3 +21,4 @@ if __name__ == "__main__":
         change_new_midi_to_ds_vocal(
             args.new_midi_file_path, args.vocal_file_path, args.cuda
         )
+
