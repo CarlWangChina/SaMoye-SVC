@@ -1,6 +1,35 @@
 # SaMoye-SVC
 
-Even dogs can sing a song.
+## Quick Start: Simple Voice Cloning
+
+This guide covers the fastest way to run the SaMoye SVC model for voice cloning. For this simple inference task, you only need the code located in the `SaMoye-SVC/SaMoye-Model/` directory.
+
+### Step 1: Download the Pre-trained Model
+
+First, download the required model weights from the link below and place the `.pt` file inside the `SaMoye-SVC/SaMoye-Model/` directory.
+
+-   **Download Link:** [https://huggingface.co/karl-wang/SaMoyeSVC/blob/main/sovits_spk_1700h_0020.pt](https://huggingface.co/karl-wang/SaMoyeSVC/blob/main/sovits_spk_1700h_0020.pt)
+
+### Step 2: Run the Inference Command
+
+Navigate into the `SaMoye-SVC/SaMoye-Model/` directory and execute the following command in your terminal:
+
+```bash
+python svc_inference.py --config configs/sovits_spk_1700h.yaml --model sovits_spk_1700h_0020.pt --spk path/to/your/speaker.wav --wave path/to/your/content.wav
+```
+
+### Important:
+
+You must customize the paths for --spk and --wave.
+
+--spk: This is the path to the audio file of the target voice you want to clone.
+
+--wave: This is the path to the content audio you want to convert.
+
+That's it! It's that simple. You can safely ignore all other folders, as they contain supplementary research materials not required to run the model.
+
+
+## Even dogs can sing a song.
 
 The code is as shown in the repository, and the weight checkpoint can be downloaded from the following:
 I have uploaded the model weights here on Hugging Face: https://huggingface.co/karl-wang/SaMoyeSVC/tree/main
