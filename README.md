@@ -28,6 +28,13 @@ You must customize the paths for --spk and --wave.
 
 That's it! It's that simple. You can safely ignore all other folders, as they contain supplementary research materials not required to run the model.
 
+https://github.com/CarlWangChina/SaMoye-SVC/blob/main/SaMoye-SVC-问题回答整理.docx
+
+https://github.com/CarlWangChina/SaMoye-SVC/blob/main/SaMoye-SVC-Question%26Answer.docx
+
+Regarding problems encountered while running the model code, they are documented in the Q&A document available on our homepage. 
+We've prepared two versions: one in Chinese and another in English. If you encounter any bugs in your code, please first consult these documents. 
+
 
 ## Even dogs can sing a song.
 
@@ -41,21 +48,9 @@ The results generated have all appeared on the homepage.
 https://github.com/CarlWangChina/SaMoye-SVC/PetVocolia-Demo
 Each audio file starts with the target timbre, followed by the generated portion. Please do not skip to the middle to listen to the audio; you will miss the beginning reference audio.
 
-In the root directory, we have included some audio samples as demos. These samples are outputs from the samoye-svc model, which uses the vocal timbres of cats and dogs to simulate singing. 
-
-The current results are trained on a dataset of 1700 hours of clean, unprocessed vocal singing data. Feel free to listen and see if you get the sense that these animals have come to life with the ability to sing like humans. For those seeking improved outcomes, you are encouraged to contribute additional clean vocal singing recordings for continued training and scaling up of the model.
-
 https://github.com/CarlWangChina/SaMoye-SVC/blob/main/test.ipynb
 
 The purpose of test.ipynb is to serve as a script for organizing and processing test data. It is used to handle the test data by generating the necessary files or directories for the inference process. In this context, test.ipynb is a Jupyter Notebook that likely contains instructions or code for preparing test data in the correct format, such as converting or loading data into the appropriate structure that the svc_inference.py script expects.
-
-https://github.com/CarlWangChina/SaMoye-SVC/blob/main/SaMoye-SVC-问题回答整理.docx
-
-https://github.com/CarlWangChina/SaMoye-SVC/blob/main/SaMoye-SVC-Question%26Answer.docx
-
-Regarding problems encountered while running the model code, they are documented in the Q&A document available on our homepage. 
-We've prepared two versions: one in Chinese and another in English. If you encounter any bugs in your code, please first consult these documents. 
-If these sources do not resolve your issue, feel free to contact us.
 
 
 ![image](pics/cover.jpg)
