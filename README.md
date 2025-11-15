@@ -171,3 +171,21 @@ The migrated content includes the following:
 
 > **Important:**
 > These files are essential for running experiments, training models, or reproducing results. They are not included in this GitHub repository, so please ensure you download and restore them to their correct original paths to ensure full functionality.
+
+## Citation
+If you use this work in your research, please cite our paper:
+```
+@inproceedings{ijcai2025p1135,
+  title     = {AI-Assisted Human-Pet Artistic Musical Co-Creation for Wellness Therapy},
+  author    = {Wang, Zihao and Ma, Le and Jin, Yuhang and Feng, Yongsheng and Pan, Xin and Ji, Shulei and Zhang, Kejun},
+  booktitle = {Proceedings of the Thirty-Fourth International Joint Conference on
+               Artificial Intelligence, {IJCAI-25}},
+  publisher = {International Joint Conferences on Artificial Intelligence Organization},
+  editor    = {James Kwok},
+  pages     = {10216--10224},
+  year      = {2025},
+  month     = {8},
+  note      = {AI, Arts & Creativity},
+  doi       = {10.24963/ijcai.2025/1135},
+  url       = {https://doi.org/10.24963/ijcai.2025/1135},
+}
