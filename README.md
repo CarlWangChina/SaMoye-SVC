@@ -52,8 +52,7 @@ https://github.com/CarlWangChina/SaMoye-SVC/blob/main/test.ipynb
 
 The purpose of test.ipynb is to serve as a script for organizing and processing test data. It is used to handle the test data by generating the necessary files or directories for the inference process. In this context, test.ipynb is a Jupyter Notebook that likely contains instructions or code for preparing test data in the correct format, such as converting or loading data into the appropriate structure that the svc_inference.py script expects.
 
-
-![image](pics/cover.jpg)
+<img width="1390" height="900" alt="不带音色转换过程的图" src="https://github.com/user-attachments/assets/5e78b30e-a35a-4a9d-a3c4-07fe34bd6f31" />
 
 
 # Script
