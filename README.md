@@ -1,6 +1,6 @@
 # SaMoye-SVC
 
-> [`expand_train_jxb`](https://github.com/CarlWangChina/SaMoye-SVC/tree/expand_train_jxb) 分支在原模型基础上增加了约 4000 名中国歌声和说话人数据进行扩大训练，并提供了关键权重的下载与放置说明。
+> [`expand_train_jxb`](https://github.com/CarlWangChina/SaMoye-SVC/tree/expand_train_jxb) This branch extends the original model through additional training using data from approximately 4,000 Chinese singers and speakers, and provides instructions for downloading and placing the key weights.
 
 ## Quick Start: Simple Voice Cloning
 
