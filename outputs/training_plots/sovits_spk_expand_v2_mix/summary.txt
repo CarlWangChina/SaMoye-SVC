@@ -1,0 +1,13 @@
+run_name=sovits_spk_expand_v2_mix
+train_points=5985
+epochs=19
+first_step=1
+last_step=5985
+g_loss: first_epoch=11.619162 last_epoch=11.646525 delta=0.027363
+mel_loss: first_epoch=0.489141 last_epoch=0.485704 delta=-0.003436
+stft_loss: first_epoch=8.808956 last_epoch=8.818504 delta=0.009548
+d_loss: first_epoch=0.386396 last_epoch=0.387019 delta=0.000623
+kl_f_loss: first_epoch=0.255055 last_epoch=0.254589 delta=-0.000465
+kl_r_loss: first_epoch=0.507305 last_epoch=0.504712 delta=-0.002592
+spk_loss: first_epoch=0.005293 last_epoch=0.004213 delta=-0.001080
+validation_mel_loss: first=0.061168 last=0.059500 best=0.059089

@@ -1,0 +1,58 @@
+# Local tooling and OS files
+.claude/
+.DS_Store
+**/.DS_Store
+.idea/
+.vscode/
+.ipynb_checkpoints/
+**/__pycache__/
+*.py[cod]
+
+# Raw and processed datasets
+/recordings_single_channel_denoised_cut80hz/
+/歌曲录音素材单声道降噪去80hz以下版/
+**/data/
+**/data_raw/
+**/data_svc/
+**/dataset_raw/
+**/data_expand_v1/
+**/data_expand_v2_new/
+**/files/
+
+# Training artifacts
+**/chkpt/
+**/logs/
+/outputs/**/raw_metrics.csv
+/outputs/expand_plan/v1_manifest/
+*.log
+*.tfevents.*
+*.ckpt
+*.pth
+*.pth.tar
+*.pt
+*.bin
+*.safetensors
+*.onnx
+*.jit
+
+# Audio and generated features
+*.wav
+*.mp3
+*.flac
+*.m4a
+*.aac
+*.ogg
+*.npy
+*.npz
+
+# Archives
+*.zip
+*.gz
+*.tgz
+*.rar
+*.zst
+*.7z
+*.xz
+*.bz2
+*.tar
+*.tar.gz

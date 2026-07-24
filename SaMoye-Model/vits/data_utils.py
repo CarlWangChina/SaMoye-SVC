@@ -80,7 +80,7 @@ class TextAudioSpeakerSet(torch.utils.data.Dataset):
         use = item[6]
 
         wav = self.read_wav(wav)
-        spe = torch.load(spe)
+        spe = torch.load(spe, weights_only=True)
 
         pit = np.load(pit)
         vec = np.load(vec)

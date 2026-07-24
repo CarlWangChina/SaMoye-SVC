@@ -1,24 +1,60 @@
-# Script
-This model's code is modified and improved based on [whisper-vits-svc](https://github.com/PlayVoice/whisper-vits-svc).
+# SaMoye-Model
+
+This model is modified and improved based on [whisper-vits-svc](https://github.com/PlayVoice/whisper-vits-svc).
+
+本分支增加了约 4000 名中国歌声、说话人数据进行扩大训练。为保护数据并控制仓库体积，GitHub 仅保存代码、配置和文档，不包含训练音频、预处理特征、训练日志或模型权重。
+
+## Expanded training
 
 ```bash
-cd model
+cd SaMoye-Model
+
+# 第一阶段扩大训练
+python svc_trainer.py \
+  -c configs/sovits_spk_expand_v1_core.yaml \
+  -n sovits_spk_expand_v1_core
+
+# 第一阶段继续训练
+python svc_trainer.py \
+  -c configs/sovits_spk_expand_v1_core_continue.yaml \
+  -n sovits_spk_expand_v1_core_continue_e60_20260610
+
+# 第二阶段混合训练
+python svc_trainer.py \
+  -c configs/sovits_spk_expand_v2_mix.yaml \
+  -n sovits_spk_expand_v2_mix
 ```
 
-## Training:
+## Model weights
+
+Hugging Face 的几个权重 model 链接如下：
+
+- **扩大训练验证效果最佳**：[sovits_spk_expand_v2_mix_0015.pt](https://huggingface.co/karl-wang/SaMoye-SVC-expand-train-jxb/resolve/main/checkpoints/sovits_spk_expand_v2_mix/sovits_spk_expand_v2_mix_0015.pt?download=true)
+- **最近保存的 checkpoint**：[sovits_spk_expand_v1_core_continue_e60_20260610_0031.pt](https://huggingface.co/karl-wang/SaMoye-SVC-expand-train-jxb/resolve/main/checkpoints/sovits_spk_expand_v1_core_continue_e60_20260610/sovits_spk_expand_v1_core_continue_e60_20260610_0031.pt?download=true)
+- **后续训练依赖的父 checkpoint**：[sovits_spk_expand_v1_core_0019.pt](https://huggingface.co/karl-wang/SaMoye-SVC-expand-train-jxb/resolve/main/checkpoints/sovits_spk_expand_v1_core/sovits_spk_expand_v1_core_0019.pt?download=true)
+
+下载后需要分别放在以下路径：
+
+```text
+SaMoye-Model/chkpt/sovits_spk_expand_v2_mix/sovits_spk_expand_v2_mix_0015.pt
+SaMoye-Model/chkpt/sovits_spk_expand_v1_core_continue_e60_20260610/sovits_spk_expand_v1_core_continue_e60_20260610_0031.pt
+SaMoye-Model/chkpt/sovits_spk_expand_v1_core/sovits_spk_expand_v1_core_0019.pt
+```
+
+`sovits_spk_expand_v2_mix_0015.pt` 在 TensorBoard step 5040 取得三组扩大训练记录中的最低验证 mel loss（`0.0590887`），因此作为当前验证效果最佳权重。`0031.pt` 是最近一次完整保存的 checkpoint；`v1_core_0019.pt` 是两个后续训练配置共同依赖的父 checkpoint。其他中间或废弃 checkpoint 不上传。
+
+## TensorBoard
+
 ```bash
-python svc_trainer.py -c configs/sovits_spk_1700h.yaml -n sovits_spk_1700h
+tensorboard --logdir=logs --port 12345
 ```
 
-## Tensorboard:
-```bash
-tensorboard --logdir=logs/sovits_spk_1700h --port 12345
-```
-
-## Infer script:
-Download the ckpt from [this link](https://drive.google.com/file/d/1GnPmTS2Ps3rGVEcQX8a1GuVd48nN3f43/view?usp=drive_link).
+## Inference
 
 ```bash
-python svc_inference.py --config configs/sovits_spk_1700h.yaml --model sovits_spk_1700h_0020.pt --spk spk.wav --wave content.wav
-```
+python svc_inference.py \
+  --config configs/sovits_spk_expand_v1_core_continue.yaml \
+  --model chkpt/sovits_spk_expand_v1_core_continue_e60_20260610/sovits_spk_expand_v1_core_continue_e60_20260610_0031.pt \
+  --spk spk.wav \
+  --wave content.wav
 ```

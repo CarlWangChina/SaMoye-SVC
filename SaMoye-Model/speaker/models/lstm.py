@@ -166,7 +166,7 @@ class LSTMSpeakerEncoder(nn.Module):
         eval: bool = False,
         use_cuda: bool = False,
     ):
-        checkpoint = torch.load(checkpoint_path)
+        checkpoint = torch.load(checkpoint_path, weights_only=False)
         checkpoint = checkpoint["model_g"]
         # print("checkpoint keys:", checkpoint.keys())
 

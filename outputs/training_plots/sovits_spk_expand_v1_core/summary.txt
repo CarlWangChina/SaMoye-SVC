@@ -1,0 +1,13 @@
+run_name=sovits_spk_expand_v1_core
+train_points=31122
+epochs=19
+first_step=1
+last_step=31122
+g_loss: first_epoch=11.816153 last_epoch=11.432052 delta=-0.384100
+mel_loss: first_epoch=0.509846 last_epoch=0.491654 delta=-0.018192
+stft_loss: first_epoch=8.954358 last_epoch=8.649228 delta=-0.305130
+d_loss: first_epoch=0.394383 last_epoch=0.394061 delta=-0.000322
+kl_f_loss: first_epoch=0.268957 last_epoch=0.253199 delta=-0.015758
+kl_r_loss: first_epoch=0.553894 last_epoch=0.497453 delta=-0.056441
+spk_loss: first_epoch=0.004372 last_epoch=0.005474 delta=0.001102
+validation_mel_loss: first=0.070033 last=0.063379 best=0.059410

@@ -1,0 +1,13 @@
+run_name=sovits_spk_expand_v1_core_continue_e60_20260610
+train_points=22526
+epochs=14
+first_step=31123
+last_step=53648
+g_loss: first_epoch=11.441979 last_epoch=11.378647 delta=-0.063331
+mel_loss: first_epoch=0.490621 last_epoch=0.487280 delta=-0.003341
+stft_loss: first_epoch=8.649285 last_epoch=8.610666 delta=-0.038619
+d_loss: first_epoch=0.394232 last_epoch=0.394267 delta=0.000035
+kl_f_loss: first_epoch=0.253143 last_epoch=0.249563 delta=-0.003580
+kl_r_loss: first_epoch=0.498534 last_epoch=0.484815 delta=-0.013719
+spk_loss: first_epoch=0.005764 last_epoch=0.005662 delta=-0.000101
+validation_mel_loss: first=0.062843 last=0.060912 best=0.059133

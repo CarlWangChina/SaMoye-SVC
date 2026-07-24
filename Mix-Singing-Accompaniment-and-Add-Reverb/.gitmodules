@@ -1,4 +1,0 @@
-[submodule "effector"]
-	path = effector
-	url = git@github.com:muer-dm/effector.git
-	branch = main

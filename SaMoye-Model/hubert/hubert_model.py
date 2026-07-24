@@ -215,7 +215,7 @@ def hubert_soft(
         path (str): path of a pretrained model
     """
     hubert = HubertSoft()
-    checkpoint = torch.load(path)
+    checkpoint = torch.load(path, weights_only=False)
     consume_prefix_in_state_dict_if_present(checkpoint, "module.")
     hubert.load_state_dict(checkpoint)
     hubert.eval()

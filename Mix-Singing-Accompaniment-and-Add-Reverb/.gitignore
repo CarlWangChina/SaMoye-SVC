@@ -1,7 +1,0 @@
-*.wav
-*.mp3
-__pycache__
-*.pyc
-*.pyo
-*.pyd
-*.out
