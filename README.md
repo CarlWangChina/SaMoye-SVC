@@ -1,5 +1,7 @@
 # SaMoye-SVC
 
+> [`expand_train_jxb`](https://github.com/CarlWangChina/SaMoye-SVC/tree/expand_train_jxb) 分支在原模型基础上增加了约 4000 名中国歌声和说话人数据进行扩大训练，并提供了关键权重的下载与放置说明。
+
 ## Quick Start: Simple Voice Cloning
 
 This guide covers the fastest way to run the SaMoye SVC model for voice cloning. For this simple inference task, you only need the code located in the `SaMoye-SVC/SaMoye-Model/` directory.
