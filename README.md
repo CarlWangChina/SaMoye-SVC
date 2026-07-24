@@ -1,8 +1,6 @@
 # SaMoye-SVC — expand_train_jxb
 
-This model is modified and improved based on [whisper-vits-svc](https://github.com/PlayVoice/whisper-vits-svc).
-
-本分支增加了约 4000 名中国歌声、说话人数据进行扩大训练。为保护数据并控制仓库体积，GitHub 仅保存代码、配置和文档，不包含训练音频、预处理特征、训练日志或模型权重。
+本分支增加了约 4000 名中国歌声、说话人数据进行扩大训练。
 
 ## Expanded training
 
