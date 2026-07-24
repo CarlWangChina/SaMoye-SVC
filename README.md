@@ -1,4 +1,4 @@
-# SaMoye-Model
+# SaMoye-SVC — expand_train_jxb
 
 This model is modified and improved based on [whisper-vits-svc](https://github.com/PlayVoice/whisper-vits-svc).
 
